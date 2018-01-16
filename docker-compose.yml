@@ -12,10 +12,10 @@ services:
     volumes:
     - ./:/blockchain-demo
   node2:
-    environment:      
+    environment:
       - HOST=0.0.0.0
       - NAME=2
-      - PEERS=http://node1:3001      
+      - PEERS=http://node1:3001
     build:
       context: ./
       dockerfile: Dockerfile
@@ -29,7 +29,7 @@ services:
     environment:
       - HOST=0.0.0.0
       - NAME=3
-      - PEERS=http://node2:3001      
+      - PEERS=http://node2:3001
     build:
       context: ./
       dockerfile: Dockerfile
@@ -39,3 +39,8 @@ services:
     - ./:/blockchain-demo
     links:
       - node2:node2
+  mongo:
+    image: mongo
+    container_name: mongo
+    ports:
+      - "27017:27017"

@@ -4,6 +4,6 @@ VOLUME /blockchain-demo
 
 WORKDIR /blockchain-demo
 
-ENTRYPOINT node src/blockchain-demo.js
+ENTRYPOINT node src
 
 EXPOSE 3001

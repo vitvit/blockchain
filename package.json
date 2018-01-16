@@ -1,11 +1,11 @@
 {
-  "name": "blockchain",
+  "name": "blockchain-demo",
   "version": "1.0.0",
   "description": "Blockchain demo app",
-  "main": "app.js",
   "scripts": {
-    "start": "node src/blockchainDemo.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src",
+    "compose:up": "docker-compose up",
+    "test": "node_modules/.bin/nyc --reporter=lcov --reporter=text --clean node node_modules/mocha/bin/_mocha -u bdd --colors test/"
   },
   "license": "ISC",
   "repository": {
@@ -17,8 +17,10 @@
     "es6-error": "^4.0.2",
     "express": "^4.11.2",
     "log4js": "^2.4.1",
+    "mongoose": "^4.13.9",
     "swagger-tools": "^0.10.1",
-    "swagger-ui-express": "^1.0.7"
+    "swagger-ui-express": "^1.0.7",
+    "yaml-config": "^0.3.0"
   },
   "engines": {
     "node": ">=6"

@@ -1,0 +1,12 @@
+default:
+  server:
+    port: 3001
+  database:
+    host: '127.0.0.1'
+    port: 27017
+development:
+  database:
+    name: 'blockchain_db'
+test:
+  database:
+    name: 'blockchain_db_test'
